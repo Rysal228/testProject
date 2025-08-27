@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ItemsService } from './items.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  data : any[] = []
+  constructor( private itemsService: ItemsService){
+    this.itemsService.getItems().subscribe( (result) => this.data = result);
+  }
   title = 'newProjectTest';
 }
