@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { ItemsService } from '../../items.service';
+
 
 @Component({
   selector: 'app-header',
@@ -12,5 +11,5 @@ export class HeaderComponent {
   constructor(){
   
   }
-  
+  value: number = 100;
 }

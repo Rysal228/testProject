@@ -1,0 +1,15 @@
+<div class="spinner-wrapper" *ngIf="isLoading">
+  <app-progress-spinner></app-progress-spinner>
+</div>
+<div *ngIf="error">Ошибка при загрузке данных</div>
+<div class="containter-items" *ngIf="productList$ | async as products">
+  <div *ngFor="let item of products">
+    <img [src]="item.images" alt="{{ item.title }}">
+    <p>Name: {{ item.title }}</p>
+    <p>Price: {{ item.price | currency }}</p>
+    <button mat-raised-button class="button-card">
+      <mat-icon>search</mat-icon>
+      <span>Перейти к описанию товара</span>
+    </button>
+  </div>
+</div>

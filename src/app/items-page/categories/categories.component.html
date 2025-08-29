@@ -1,0 +1,8 @@
+<div *ngIf="error">Ошибка при загрузке категорий</div>
+<mat-button-toggle-group
+  name="categories"
+  appearance="standard">
+  <mat-button-toggle *ngFor="let category of categoryList$ | async" (click)="selectedCategory(category)">
+    {{ category.name }}
+  </mat-button-toggle>
+</mat-button-toggle-group>
